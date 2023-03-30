@@ -1,0 +1,83 @@
+﻿@model testBooks2.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @ViewBag.sts
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_num)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @using (Html.BeginForm("BookRes", "Books", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        if (ViewBag.isRes == true)
+        {
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Reserve Book" class="btn btn-default" disabled="disabled" />
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Reserve Book" class="btn btn-default" />
+                </div>
+            </div>
+        }
+
+
+    }
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
