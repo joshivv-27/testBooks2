@@ -151,7 +151,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BooksModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\selectedBook.cs" />
     <Compile Include="Models\staticClassForBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

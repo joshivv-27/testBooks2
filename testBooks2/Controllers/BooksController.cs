@@ -16,16 +16,7 @@ namespace testBooks2.Controllers
     {
         private BooksDBEntities db = new BooksDBEntities();
 
-        private selectedBook sb = new selectedBook();
-
         // GET: Books
-        /*
-        public ActionResult Index()
-        {
-            return View(db.Books.ToList());
-        }
-        */
-
         //to filter data
         public ActionResult Index(string searchString)
         {
@@ -66,8 +57,6 @@ namespace testBooks2.Controllers
             }
             ViewBag.sts = sts;
             ViewBag.isRes = isRes;
-            sb.selBook = book;
-            sb.bookID = book.id.ToString();
             staticClassForBook.selBookID = book.id.ToString();
             return View(book);
         }
